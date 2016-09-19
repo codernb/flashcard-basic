@@ -1,5 +1,12 @@
 .gradle
 build/
+.settings/
+.classpath
+.project
+bin/
+gradle/
+gradlew*
+WebContent/
 
 # Ignore Gradle GUI config
 gradle-app.setting
