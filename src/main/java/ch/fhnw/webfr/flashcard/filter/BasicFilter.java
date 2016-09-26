@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-@WebFilter(filterName = "BasicFilter", servletNames = "BasicServlet")
+@WebFilter(servletNames = "BasicServlet")
 public class BasicFilter implements Filter {
 
 	@Override
