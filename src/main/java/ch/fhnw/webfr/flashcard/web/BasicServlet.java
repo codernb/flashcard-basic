@@ -8,6 +8,7 @@ import java.util.Optional;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import ch.fhnw.webfr.flashcard.domain.Questionnaire;
 import ch.fhnw.webfr.flashcard.persistence.QuestionnaireRepository;
 import ch.fhnw.webfr.flashcard.util.QuestionnaireInitializer;
 
+@WebServlet(urlPatterns = "/*", name = "BasicServlet")
 @SuppressWarnings("serial")
 public class BasicServlet extends HttpServlet {
 
