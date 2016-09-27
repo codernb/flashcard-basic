@@ -4,5 +4,33 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 	<display-name>Basic Servlet Web Application</display-name>
+	
+	<servlet>
+		<servlet-name>BasicServlet</servlet-name>
+		<servlet-class>ch.fhnw.webfr.flashcard.web.BasicServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>BasicServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>LanguageFilter</filter-name>
+		<filter-class>ch.fhnw.webfr.flashcard.filter.LanguageFilter</filter-class>
+		<init-param>
+			<param-name>languageFile</param-name>
+			<param-value>i18n.properties</param-value>
+		</init-param>
+		<init-param>
+			<param-name>language</param-name>
+			<param-value>de</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>LanguageFilter</filter-name>
+		<servlet-name>BasicServlet</servlet-name>
+	</filter-mapping>
 
 </web-app>

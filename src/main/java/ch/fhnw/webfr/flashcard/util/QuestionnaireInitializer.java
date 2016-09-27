@@ -12,7 +12,7 @@ public class QuestionnaireInitializer {
 		QuestionnaireRepository repo = new QuestionnaireRepository();
 		repo.save(new Questionnaire("Test Questionnaire 1", "Lorem ipsum dolor sit amet..."));
 		repo.save(new Questionnaire("Test Questionnaire 2", "Lorem ipsum dolor sit amet..."));
-		repo.save(new Questionnaire("i18n Test fÃ¼nf", "Lorem ipsum dolor sit amet..."));
+		repo.save(new Questionnaire("i18n Test fünf", "Lorem ipsum dolor sit amet..."));
 		
 		logger.debug("Questionnaires initialized successfully");
 		

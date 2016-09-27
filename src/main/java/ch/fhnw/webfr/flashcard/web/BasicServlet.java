@@ -8,7 +8,6 @@ import java.util.Optional;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +18,6 @@ import ch.fhnw.webfr.flashcard.domain.Questionnaire;
 import ch.fhnw.webfr.flashcard.persistence.QuestionnaireRepository;
 import ch.fhnw.webfr.flashcard.util.QuestionnaireInitializer;
 
-@WebServlet(urlPatterns = "/*", name = "BasicServlet")
 @SuppressWarnings("serial")
 public class BasicServlet extends HttpServlet {
 
@@ -29,7 +27,8 @@ public class BasicServlet extends HttpServlet {
 	 * be a problem. THIS VERSION IS NOT PRODUCTION READY!
 	 */
 	private QuestionnaireRepository questionnaireRepository;
-
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
@@ -78,7 +77,7 @@ public class BasicServlet extends HttpServlet {
 			List<Questionnaire> questionnaires) throws IOException {
 		PrintWriter writer = response.getWriter();
 		writer.append("<html><head><title>Example</title></head><body>");
-		writer.append("<h3>FragebÃ¶gen</h3>");
+		writer.append("<h3>Fragebögen</h3>");
 		for (Questionnaire questionnaire : questionnaires) {
 			String url = request.getContextPath() + request.getServletPath();
 			url = url + "/questionnaires/" + questionnaire.getId().toString();
